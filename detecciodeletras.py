@@ -30,10 +30,9 @@ def reconocer_letra(hand_landmarks, frame):
     distancia_pulgar_indice = np.linalg.norm(np.array(pulgar) - np.array(indice))
     distancia_indice_medio = np.linalg.norm(np.array(indice) - np.array(medio))
     distancia_anular_meñique = np.linalg.norm(np.array(anular) - np.array(meñique))
-    cv2.circle(frame,(pulgar[0]*2,pulgar[1]+20), int (distancia_pulgar_indice), (0,234,21), -1)
    
     # Lógica para reconocer algunas letras
-    if distancia_pulgar_indice <110 and distancia_pulgar_indice >90 and distancia_indice_medio <30 and distancia_anular_meñique <30:
+    if distancia_pulgar_indice <140 and distancia_pulgar_indice >130 and distancia_indice_medio <30 and distancia_anular_meñique <30:
         return "A"  # Seña de la letra A (puño cerrado con pulgar al lado)
     elif distancia_pulgar_indice >105 and distancia_pulgar_indice<125 and distancia_anular_meñique >30 and distancia_anular_meñique <45:
         return "B"  # Seña de la letra B (todos los dedos estirados, pulgar en la palma)
@@ -65,8 +64,16 @@ while cap.isOpened():
             h, w, _ = frame.shape
             pulgar = hand_landmarks.landmark[4]
             indice = hand_landmarks.landmark[8]
+            medio = hand_landmarks.landmark[12]
             anular= hand_landmarks.landmark[16]
             meñique = hand_landmarks.landmark[20]
+
+            basemedio=hand_landmarks.landmark[9]
+            basemeñique=hand_landmarks.landmark[17]
+            baseindice=hand_landmarks.landmark[5]
+            baseanular=hand_landmarks.landmark[13]
+            
+            # Calcular la distancia entre el pulgar y el índice
             
             # Convertir coordenadas normalizadas a píxeles
             pulgar_px = (int(pulgar.x * w), int(pulgar.y * h))
