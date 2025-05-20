@@ -1,0 +1,56 @@
+# Ignorar carpetas y archivos generados automáticamente
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# Entornos virtuales (NO subir)
+venv/
+env/
+ENV/
+.venv/
+Lib/
+Include/
+Scripts/
+
+# Archivos temporales
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos del sistema y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Ignorar entornos virtuales y archivos innecesarios
+Lib/
+Include/
+Scripts/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+Thumbs.db
+
+
+# Entornos virtuales
+venv/
+env/
+ENV/
+.venv/
+
+# Archivos de configuración de IDEs/editors
+.vscode/
+.idea/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
