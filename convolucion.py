@@ -1,3 +1,4 @@
+
 import cv2 as cv
 import numpy as np
 
@@ -22,9 +23,6 @@ for i in range(x):
                    
 
                    
-
-
-
 # Mostrar la imagen original y la escalada
 cv.imshow('Imagen Original', img)
 cv.imshow('Imagen Escalada con funcion de cv', scaled_img2)
