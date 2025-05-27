@@ -77,7 +77,7 @@ while cap.isOpened():
 
     if results.multi_hand_landmarks and results.multi_handedness:
         for hand_landmarks, handedness in zip(results.multi_hand_landmarks, results.multi_handedness):
-            etiqueta_mano = handedness.classification[0].label
+            etiqueta_mano = handedness.classification[0].label 
             mp_drawing.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
             gesto = detectar_gesto(hand_landmarks)
             gestos[etiqueta_mano] = gesto
