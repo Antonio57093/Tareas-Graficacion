@@ -1,7 +1,14 @@
 # convolucion.py
 
 ```python
-
+"""
+PROGRAMA: Procesamiento de Imágenes con Convolución
+DESCRIPCIÓN:
+   Este programa realiza operaciones básicas de procesamiento de imágenes, incluyendo:
+   - Carga de imágenes en escala de grises
+   - Escalado de imágenes
+   - Aplicación de un kernel de convolución básico (filtro de promediado 3x3)
+"""
 import cv2 as cv
 import numpy as np
 

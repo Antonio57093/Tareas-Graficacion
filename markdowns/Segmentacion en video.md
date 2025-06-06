@@ -1,6 +1,14 @@
 # Segmentacion en video.py
 
 ```python
+"""
+PROGRAMA: Segmentacion de color en video
+DESCRIPCIÓN:
+   Este programa aplica segmentación de color en tiempo real usando la cámara web.
+   Convierte los fotogramas del video al espacio HSV y filtra colores dentro de un
+   rango específico para mostrar solo las zonas de interés.
+"""
+
 #Segmentacion de color en video
 
 import cv2 as cv

@@ -1,6 +1,10 @@
 # Piezas_ajedrez.py
 
 ```python
+"""
+Programa:Dibujo de piezas de ajedrez
+Propósito: Renderizar modelos básicos de ajedrez con primitivas OpenGL.
+"""
 import glfw
 from math import cos, sin, pi
 from OpenGL.GL import *

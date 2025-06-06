@@ -1,6 +1,11 @@
 # futbol.py
 
 ```python
+"""
+PROGRAMA: Seguimiento de una Pelota con Flujo Óptico Lucas-Kanade
+DESCRIPCIÓN:
+Este programa simula el movimiento de una pelota dentro de un marco visual. Utiliza la cámara web para capturar video y el algoritmo de flujo óptico de Lucas-Kanade para actualizar la posición de la pelota, detectando movimiento en tiempo real.
+"""
 import numpy as np
 import cv2 as cv
 

@@ -1,6 +1,14 @@
 # segmentacion del color.py
 
 ```python
+"""
+PROGRAMA:Segmentacion de color 
+DESCRIPCIÓN:
+   Este programa realiza segmentación de color en una imagen cargada, utilizando el
+   espacio de color HSV y máscaras binarias. Detecta zonas rojas (por ejemplo, manzanas)
+   mediante rangos específicos y muestra el resultado segmentado con OpenCV.
+"""
+
 import cv2 as cv   #importa openCv
 import numpy as np  # Importa Numpy
 

@@ -1,6 +1,14 @@
 # deteccionderostro.py
 
 ```python
+"""
+PROGRAMA: Detección de Rostro con Puntos Faciales usando MediaPipe
+DESCRIPCIÓN:
+   Este programa utiliza la biblioteca MediaPipe de Google para detectar un rostro en tiempo real 
+   desde la cámara web y dibujar una malla de puntos faciales (Face Mesh). Se destacan los ojos 
+   con puntos rojos y los labios con puntos azules, mientras que el resto de la malla facial 
+   se representa en verde. La imagen se refleja horizontalmente para mayor naturalidad.
+"""
 import cv2
 import mediapipe as mp
 

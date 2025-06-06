@@ -1,6 +1,11 @@
 # figuras.py
 
 ```python
+"""
+PROGRAMA: Dibujo de Figuras Geométricas en una Imagen
+DESCRIPCIÓN:
+Este script genera una imagen en blanco y dibuja sobre ella círculos, líneas y rectángulos de diferentes tamaños y colores utilizando funciones de dibujo de OpenCV.
+"""
 import cv2 as cv
 import numpy as np
 

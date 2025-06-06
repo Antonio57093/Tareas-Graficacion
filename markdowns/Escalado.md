@@ -1,6 +1,11 @@
 # Escalado.py
 
 ```python
+"""
+PROGRAMA: Escalado de Imagen con y sin Función de OpenCV
+DESCRIPCIÓN:
+El programa realiza el escalado de una imagen en escala de grises de dos maneras: utilizando la función resize de OpenCV y de forma manual mediante interpolación básica. Se muestran ambas imágenes escaladas para comparación.
+"""
 import cv2 as cv
 import numpy as np
 

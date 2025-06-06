@@ -1,6 +1,14 @@
 # controles.py
 
 ```python
+"""
+PROGRAMA: Seguimiento de Movimiento Óptico con OpenCV
+DESCRIPCIÓN:
+   Este programa implementa un sistema de seguimiento de movimiento en tiempo real
+   utilizando el algoritmo Lucas-Kanade para flujo óptico. Detecta y sigue puntos
+   de interés en un video capturado por la cámara web, mostrando visualmente la
+   dirección y magnitud del movimiento.
+   """
 import numpy as np
 import cv2 as cv
 

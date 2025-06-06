@@ -1,6 +1,14 @@
 # casa.py
 
 ```python
+"""
+PROGRAMA: Casa 3D con OpenGL
+DESCRIPCIÓN:
+   Este programa renderiza una casa tridimensional con techo a dos aguas sobre un terreno,
+   utilizando gráficos OpenGL. La escena incluye una base cúbica (casa), un techo piramidal
+   y un plano que simula el terreno. La visualización utiliza perspectiva 3D con una cámara
+   en posición fija que muestra la casa desde un ángulo elevado.
+"""
 import glfw
 from OpenGL.GL import *
 from OpenGL.GLU import gluPerspective, gluLookAt

@@ -1,6 +1,13 @@
 # arbolconmovimientos.py
 
 ```python
+"""
+PROGRAMA: ÁRBOL 3D CON MOVIMIENTO DE CÁMARA
+DESCRIPCIÓN: 
+   Este programa crea una escena 3D interactiva que muestra un árbol con tronco
+   y follaje esférico. Permite mover la cámara usando las teclas WASD (movimiento
+   horizontal) y flechas arriba/abajo (movimiento vertical).
+"""
 import glfw
 from OpenGL.GL import *
 from OpenGL.GLU import gluPerspective, gluLookAt, gluNewQuadric, gluCylinder, gluSphere

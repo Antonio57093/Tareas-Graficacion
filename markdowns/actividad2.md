@@ -1,6 +1,14 @@
 # actividad2.py
 
 ```python
+
+"""
+PROGRAMA: DETECTOR DE COLORES BÁSICO    
+DESCRIPCIÓN: Este programa detecta y muestra por separado los objetos rojos, 
+verdes, azules, amarillos y celestes en una imagen .
+"""
+
+
 import cv2 as cv   #importa openCv
 
 img = cv.imread('objetos.jpg',1)

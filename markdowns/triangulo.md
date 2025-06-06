@@ -1,6 +1,14 @@
 # triangulo.py
 
 ```python
+"""
+PROGRAMA: triangulo.py
+DESCRIPCIÓN:
+   Este programa crea un cubo 3D rotando de forma continua utilizando GLFW y OpenGL.
+   Aplica colores diferentes a cada cara y realiza transformaciones para simular una animación
+   básica de rotación en el eje Z.
+"""
+
 import glfw
 from OpenGL.GL import glClearColor, glEnable, glClear, glLoadIdentity, glTranslatef, glRotatef, glMatrixMode
 from OpenGL.GL import glBegin, glColor3f, glVertex3f, glEnd, glFlush, glViewport

@@ -1,6 +1,14 @@
 # pixelart.py
 
 ```python
+"""
+PROGRAMA: Generación de Pixel Art con OpenCV
+DESCRIPCIÓN:
+   Este programa crea una imagen en escala de grises tipo "pixel art" utilizando matrices
+   de NumPy y la librería OpenCV. Mediante capas horizontales con diferentes patrones de
+   píxeles negros sobre un fondo gris, se forma una figura compuesta que puede representar
+   una estructura simétrica o decorativa tipo sprite.
+"""
 import cv2 as cv   #importa openCv
 import numpy as np  # Importa Numpy
 

@@ -1,6 +1,14 @@
 # Proyecto2.py
-
 ```python
+"""
+PROGRAMA: Proyecto de modelado de objetos 3D
+DESCRIPCIÓN:
+   Este programa renderiza una escena 3D interactiva en tiempo real usando OpenGL, GLFW y MediaPipe.
+   Permite controlar la cámara con gestos de la mano detectados por MediaPipe, tales como acercar,
+   alejar, rotar, subir o bajar la vista. El entorno incluye árboles, flores, creepers y golems
+   con texturas aplicadas, ofreciendo una simulación visual inspirada en Minecraft.
+"""
+
 import glfw
 from OpenGL.GL import *
 from OpenGL.GLU import *
@@ -14,10 +22,7 @@ cap = cv2.VideoCapture(0)
 mp_hands = mp.solutions.hands
 hands = mp_hands.Hands(max_num_hands=1, min_detection_confidence=0.7)
 mp_drawing = mp.solutions.drawing_utils
-
 # Variables de cámara
-
-
 camera_pos = [10.0, 5.0, 10.0]
 camera_up = [0.0, 1.0, 0.0]
 camera_yaw = -135.0
@@ -27,7 +32,6 @@ camera_front = [0.0, 0.0, -1.0]
 
 # IDs de texturas
 texture_ids = {}
-
 
 def update_camera_front():
     global camera_front
@@ -47,15 +51,12 @@ def cargar_textura(archivo):
     img = Image.open(archivo)
     img = img.transpose(Image.FLIP_TOP_BOTTOM)
     img_data = img.convert("RGBA").tobytes("raw", "RGBA", 0, -1)
-    
     textura_id = glGenTextures(1)
     glBindTexture(GL_TEXTURE_2D, textura_id)
-    
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
-    
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, img.width, img.height, 0, GL_RGBA, GL_UNSIGNED_BYTE, img_data)
     return textura_id
 
@@ -111,7 +112,6 @@ def dibujar_pixel(pos_centro, index, color=(0, 1, 0), offset=0.2,
     glVertex3f(-half_x, -half_y,  half_z)
     glEnd()
     glPopMatrix()
-
 
 def dibujar_cuboid(pos=(0, 0, 0), ancho=1.0, alto=1.0, largo=2.0, color=(1.0, 1.0, 0.0), textura=None):
     x, y, z = pos
@@ -174,7 +174,6 @@ def dibujar_suelo(tamano=20.0, textura=None):
         glColor3f(1.0, 1.0, 1.0)
     else:
         glColor3f(0.5, 0.5, 0.5)
-    
     mitad = tamano / 2.0
     repeticiones = tamano / 2.0  # Para que las texturas no se estiren
     
@@ -262,7 +261,6 @@ def dibujar_cubo(pos=(0, 0, 0), color=(0.0, 1.0, 0.0), textura=None):
     if textura: glTexCoord2f(0.0, 1.0)
     glVertex3f(-half_size, -half_size,  half_size)
     glEnd()
-
     if textura:
         glDisable(GL_TEXTURE_2D)
     
@@ -271,7 +269,6 @@ def dibujar_cubo(pos=(0, 0, 0), color=(0.0, 1.0, 0.0), textura=None):
 def creeper(pos_base=(0.0, 0.0, 0.0)):
     x0, y0, z0 = pos_base
     textura_cuerpo = texture_ids.get("piel_creeper")
-    
     dibujar_cubo(pos=(x0 + 0.25, y0 + 0.25, z0 + 0.25), color=(0.0, 0.5, 0.0), textura=textura_cuerpo)
     dibujar_cubo(pos=(x0 + 0.00, y0 + 0.25, z0 + 0.25), color=(0.0, 0.5, 0.0), textura=textura_cuerpo)
     dibujar_cubo(pos=(x0 + 0.00, y0 + 0.25, z0 - 0.25), color=(0.0, 0.5, 0.0), textura=textura_cuerpo)
@@ -349,7 +346,6 @@ def golem(pos_base=(0.0, 0.0, 0.0)):
     dibujar_cuboid(pos=(x0 - 0.6875, y0 + 0.5625, z0 + 0.03125), ancho=0.25, alto=1.875, largo=0.375, color=(0.69, 0.651, 0.616), textura=textura_cuerpo)
     dibujar_cuboid(pos=(x0 + 0.6875, y0 + 0.5625, z0 + 0.03125), ancho=0.25, alto=1.875, largo=0.375, color=(0.69, 0.651, 0.616), textura=textura_cuerpo)
 
-
 def arbol(pos_base=(0.0, 0.0, 0.0)):
     x0, y0, z0 = pos_base
     textura_tronco = texture_ids.get("tronco_arbol")
@@ -420,8 +416,6 @@ def dibujar_flor(pos_centro, offset=0.01, ancho_total=0.25, alto_total=0.25):
                       cols=cols, rows=rows,
                       ancho_total=ancho_total, alto_total=alto_total)
         
-
-
 def dibujar_cielo():
     glDisable(GL_LIGHTING)
     glBegin(GL_QUADS)
@@ -443,9 +437,6 @@ def dibujar_cielo():
     glEnd()
     glEnable(GL_LIGHTING)
 
-
-
-
 def distancia(p1, p2):
     return np.sqrt((p2.x - p1.x)**2 + (p2.y - p1.y)**2)
 
@@ -464,22 +455,19 @@ def process_hand_gestures():
         for hand_landmarks in results.multi_hand_landmarks:
             mp_drawing.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
             # Puntos clave de los dedos
-            landmarks = hand_landmarks
-                    
+            landmarks = hand_landmarks           
             # Puntos clave de los dedos
             pulgar_tip = landmarks.landmark[4]
             indice_tip = landmarks.landmark[8]
             medio_tip = landmarks.landmark[12]
             anular_tip = landmarks.landmark[16]
             menique_tip = landmarks.landmark[20]
-
             # Bases de los dedos 
             base_indice = landmarks.landmark[5]
             base_medio = landmarks.landmark[9]
             base_anular = landmarks.landmark[13]
             base_menique = landmarks.landmark[17]
             base_pulgar = landmarks.landmark[2]
-
             # Distancias
             d_pulgar_baseindice = distancia(pulgar_tip, base_indice)
             d_pulgar_indice = distancia(pulgar_tip, indice_tip)
@@ -509,7 +497,6 @@ def process_hand_gestures():
                 cv2.putText(frame, "ALEJANDO CAMARA", (50, 80),
                             cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 255), 2)
 
-            
             cv2.putText(
                 frame, 
                 f"Distancia: {d_anular_base:.2f} cm",  # Formato con 2 decimales
@@ -540,14 +527,10 @@ def process_hand_gestures():
                 cv2.putText(frame, "BAJANDO", (50, 150),
                             cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
-
-
         cv2.imshow('Mano', frame)
         cv2.waitKey(1)
     else:
         hand_y_reference = None
-
-
 
 def process_input(window):
     global camera_pos, camera_front, camera_up, camera_yaw
@@ -580,7 +563,6 @@ def process_input(window):
         pos[1] -= camera_speed
 
     camera_pos[:] = pos.tolist()
-
 
 def main():
     global camera_pos, camera_front, texture_ids

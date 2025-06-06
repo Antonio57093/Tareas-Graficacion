@@ -1,6 +1,11 @@
 # manos.py
 
 ```python
+"""
+PROGRAMA: Detección y Visualización de Puntos de Mano con MediaPipe
+DESCRIPCIÓN:
+Este programa emplea la biblioteca MediaPipe para detectar manos en tiempo real desde la cámara. Dibuja los puntos clave (landmarks) de cada mano sobre la imagen usando círculos verdes, facilitando el análisis de gestos o poses.
+"""
 import cv2
 import mediapipe as mp
 

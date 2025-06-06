@@ -1,7 +1,11 @@
 # Animacion figura.py
 
 ```python
-
+"""
+PROGRAMA: ANIMACIÓN DE UNA FLOR GIRANDO  
+DESCRIPCIÓN: Este programa muestra una flor con pétalos que giran alrededor de su centro,
+junto con un tallo y una maceta. La animación continúa hasta que presionas la tecla ESC.
+"""
 import cv2 as cv
 import numpy as np
 import math

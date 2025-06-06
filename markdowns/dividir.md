@@ -1,6 +1,11 @@
 # dividir.py
 
 ```python
+"""
+PROGRAMA: Inversión de Colores en Imagen Escala de Grises
+DESCRIPCIÓN:
+Este programa carga una imagen en escala de grises, muestra su versión original y luego invierte los valores de intensidad de cada píxel utilizando una operación puntual (negativo de imagen). Se utiliza OpenCV para la manipulación de imágenes.
+"""
 import cv2 as cv   #importa openCv
 import numpy as np  # Importa Numpy
 

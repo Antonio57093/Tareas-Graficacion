@@ -1,6 +1,10 @@
 # Movimiento_de_camara_con_landmarks.py
 
 ```python
+"""
+PROGRAMA:Cotrol de camara a traves de landmarks
+Propósito: Usar la posición del dedo índice (landmark 8) para mover la cámara en un entorno 3D.
+"""
 import glfw
 from OpenGL.GL import *
 from OpenGL.GLU import gluPerspective, gluLookAt, gluNewQuadric, gluCylinder, gluSphere

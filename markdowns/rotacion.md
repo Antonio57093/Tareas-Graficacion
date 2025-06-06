@@ -1,6 +1,14 @@
 # rotacion.py
 
 ```python
+"""
+PROGRAMA:Rotacion de imagenes
+DESCRIPCIÓN:
+   Este programa realiza una rotación manual de una imagen en escala de grises utilizando
+   transformaciones geométricas. Calcula la nueva posición de cada píxel al aplicar una
+   rotación de 45 grados y muestra el resultado con OpenCV.
+"""
+
 import cv2 as cv
 import numpy as np
 import math

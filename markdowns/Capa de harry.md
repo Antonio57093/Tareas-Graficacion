@@ -1,6 +1,14 @@
 # Capa de harry.py
 
 ```python
+"""
+PROGRAMA: Capa de Invisibilidad al Estilo Harry Potter
+DESCRIPCIÓN:
+   Este programa simula el efecto de una capa de invisibilidad usando visión por computadora.
+   Detecta un objeto verde en tiempo real (como un trozo de tela verde) y lo reemplaza
+   con el fondo previamente capturado, creando la ilusión de invisibilidad. Además, dibuja
+   un rastro rojo que sigue el movimiento del objeto.
+"""
 import cv2
 import numpy as np  
 

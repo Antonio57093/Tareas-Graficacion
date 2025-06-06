@@ -1,6 +1,15 @@
 # Proyecto1LSM.py
 
 ```python
+"""
+PROGRAMA: Proyecto de Reconocimiento de Gestos en Lengua de Señas Mexicana (LSM)
+DESCRIPCIÓN:
+   Este programa detecta gestos de manos en tiempo real usando la cámara web, MediaPipe y OpenCV.
+   Reconoce letras y números en LSM (como "O", "E", "X", "4", "30".) a partir de la posición
+   relativa de los dedos. Permite identificar combinaciones con ambas manos y mostrar el resultado
+   en pantalla de forma visual.
+"""
+
 import cv2
 import mediapipe as mp
 import numpy as np

@@ -1,6 +1,11 @@
 # Haarcascades.py
 
 ```python
+"""
+PROGRAMA: Detección de Rostros con Haar Cascades y Efectos Visuales
+DESCRIPCIÓN:
+El script utiliza un clasificador Haar Cascade para detectar rostros en tiempo real mediante la cámara. Agrega elementos visuales como ojos, pupilas y una "sonrisa" dibujados sobre la cara detectada para un efecto caricaturesco.
+"""
 import cv2 as cv 
 
 rostro = cv.CascadeClassifier('haarcascade_frontalface_alt.xml')

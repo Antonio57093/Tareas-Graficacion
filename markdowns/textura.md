@@ -1,6 +1,14 @@
 # textura.py
 
 ```python
+"""
+PROGRAMA: textura.py
+DESCRIPCIÓN:
+   Este programa renderiza un árbol 3D con texturas aplicadas a las hojas, tronco y suelo,
+   utilizando OpenGL y GLFW. Carga texturas desde archivos BMP y las asigna a cilindros,
+   esferas y planos para simular un entorno natural.
+"""
+
 import sys
 import glfw
 from OpenGL.GL import *

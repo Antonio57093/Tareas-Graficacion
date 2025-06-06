@@ -1,6 +1,13 @@
 # detecciodeletras.py
 
 ```python
+"""
+PROGRAMA: Reconocimiento de Letras por Señas de Manos
+DESCRIPCIÓN:
+   Este sistema utiliza visión por computadora para reconocer letras del alfabeto basado
+   en las posiciones de los dedos de la mano. Detecta gestos manuales en tiempo real
+   mediante una cámara web e identifica las letras A, B y C según la configuración de los dedos.
+"""
 import cv2
 import mediapipe as mp
 import numpy as np
